@@ -54,15 +54,15 @@ public class PlayerController : MonoBehaviour
 
     void Interact()
     {
-        Vector3 facingDir = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
-        Vector3 interactPos = transform.position + facingDir;
+        Vector3 facingDir = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY")); //x,y,값 받아오기 
+        Vector3 interactPos = transform.position + facingDir; //벡터 더하기 
 
         Debug.DrawLine(transform.position, interactPos,Color.red,1f);
 
-        var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactablesLayer);
+        var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactablesLayer); 
         if(collider != null)
         {
-            Debug.Log("Interactive");
+            collider.GetComponent<Interactable>()?.Interact();
         }
     }
 

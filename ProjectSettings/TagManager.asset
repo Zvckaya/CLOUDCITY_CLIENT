@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - SolidObjects
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 360416847
+    locked: 0
+  - name: Interactable
+    uniqueID: 2853049691
     locked: 0
